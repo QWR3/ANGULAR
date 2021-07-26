@@ -2,15 +2,15 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
-import { PhotosComponent } from './commponents/photos/photos.component';
-import { PhotoComponent } from './commponents/photo/photo.component';
+import { DogsComponent } from './commponents/dogs/dogs.component';
+import { DogComponent } from './commponents/dog/dog.component';
 import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent,
-    PhotosComponent,
-    PhotoComponent,
+    DogsComponent,
+    DogComponent,
   ],
   imports: [BrowserModule,HttpClientModule],
   providers: [],

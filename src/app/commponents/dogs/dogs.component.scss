@@ -1,0 +1,9 @@
+.dogs{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+}
+.app-dog{
+  width: 48%;
+}

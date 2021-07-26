@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  test = 'ANGULAR >;-D';
+  title = 'breeds of dogs';
 }

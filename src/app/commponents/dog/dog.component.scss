@@ -1,0 +1,14 @@
+.dog{
+  display: flex;
+  border: solid 5px aqua;
+  margin: 5px;
+  width:100%;
+  min-width: 672px;
+}
+.dog img{
+  max-height: 300px;
+}
+.dog-text{
+  text-align: center;
+  width: 100%;
+}
