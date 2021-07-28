@@ -9,6 +9,8 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class PostComponent implements OnInit {
 
+  @Input()
+  post: IPost
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
   }
@@ -16,11 +18,9 @@ export class PostComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  @Input()
-  post: IPost
-
-  onClick() {
-    this.router.navigate([this.post?.id], {relativeTo: this.activatedRoute})
-
+  onClickGetComments(): void {
+    console.log("(*.*)")
+    this.router.navigate(["commentsToPost", this.post.id], {relativeTo: this.activatedRoute})
   }
+
 }

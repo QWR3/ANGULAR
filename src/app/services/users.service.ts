@@ -1,18 +1,18 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {IPost} from "../model/IPost";
+import {IUser} from "../model/IUser";
 import {baseUrl} from "./base-url";
 
 @Injectable({
   providedIn: 'root'
 })
-export class PostsService {
+export class UsersService {
 
   constructor(private httpClient: HttpClient) {
   }
 
-  getPosts(id:number): Observable<IPost[]> {
-    return this.httpClient.get<IPost[]>(`${baseUrl}posts/?userId=${id}`)
+  getUsers(): Observable<IUser[]> {
+    return this.httpClient.get<IUser[]>(baseUrl + 'users')
   }
 }

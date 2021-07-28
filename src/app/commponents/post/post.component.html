@@ -1,4 +1,6 @@
-<h4>{{post?.id}}-{{post?.title}}</h4>
-<button (click)="onClick()">about</button>
-<!--<a routerLink="{{post?.id}}">about</a>-->
-<hr>
+<div class="post">
+  <p>{{post?.id}} - {{post?.title}}</p>
+  <p>{{post?.body}}</p>
+  <button (click)="onClickGetComments()">get comments</button>
+  <hr>
+</div>

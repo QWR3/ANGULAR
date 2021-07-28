@@ -1,9 +1,14 @@
-import {PostsComponent} from "../commponents/posts/posts.component";
 import {Routes} from "@angular/router";
-import {AboutPostComponent} from "../commponents/about-post/about-post.component";
+import {UsersComponent} from "../commponents/users/users.component";
+import {PostsComponent} from "../commponents/posts/posts.component";
+import {CommentsComponent} from "../commponents/comments/comments.component";
 
 export const routes: Routes = [{
-  path: "posts",
-  component: PostsComponent,
-  children: [{path: ":id", component: AboutPostComponent}]
+  path: "users",
+  component: UsersComponent,
+  children: [{
+    path: "postsFromUser/:id",
+    component: PostsComponent,
+    children: [{path: "commentsToPost/:id", component: CommentsComponent}]
+  }]
 }]
