@@ -10,17 +10,16 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class UserComponent implements OnInit {
 
   @Input()
-  user: IUser
+  user:IUser
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
-  }
+  constructor(private router:Router,private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
   }
 
-  clickGetPosts(): void {
-    console.log(',;,0,;,')
-    this.router.navigate(["postsFromUser", this.user.id], {relativeTo: this.activatedRoute})
+  aboutUser():void{
+    console.log('?:-P')
+    this.router.navigate([this.user.id],{relativeTo:this.activatedRoute, state:this.user})
   }
 
 }

@@ -1,9 +1,7 @@
 <div class="main">
-  <div class="main">
-    <h2><a routerLink="/">home</a></h2>
-    <h2><a routerLink="users">users</a></h2>
-  </div>
-  <hr>
+  <a routerLink="">home</a>
+  <br>
+  <a [routerLink]="['users']">users</a>
 </div>
 <div class="father">
   <router-outlet></router-outlet>
