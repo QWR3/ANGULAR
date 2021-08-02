@@ -1,0 +1,15 @@
+.about-character{
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  >img{
+    width: 500px;
+  }
+  >ul{
+    display: flex;
+    flex-wrap: wrap;
+    >li{
+      width: 150px;
+    }
+  }
+}

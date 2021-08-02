@@ -1,0 +1,10 @@
+.page{
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin: 5px;
+  >button{
+    width: 150px;
+    background-color: dimgray;
+  }
+}

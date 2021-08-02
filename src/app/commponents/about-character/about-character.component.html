@@ -1,0 +1,15 @@
+<app-page></app-page>
+<div class="about-character">
+  <h2>{{character?.id}} - {{character?.name}}</h2>
+  <img src="{{character?.image}}" alt="image of character">
+  <h5>created - {{character?.created}}</h5>
+  <h4>status - {{character?.status}}</h4>
+  <h3>gender - {{character?.gender}}</h3>
+  <h3>species - {{character?.species}}</h3>
+  <a *ngIf="character" [routerLink]="['/location/', getPropsFromUrl(character.origin.url)]"><h3>origin - {{character.origin?.name}}</h3></a>
+  <a *ngIf="character" [routerLink]="['/location/', getPropsFromUrl(character.location.url)]"><h3>location - {{character.location?.name}}</h3></a>
+  <h3>episodes:</h3>
+  <ul>
+    <li *ngFor="let episode of character?.episode"><a [routerLink]="['/episode/',getPropsFromUrl(episode)]" ><h4>episode - {{getPropsFromUrl(episode)}}</h4></a></li>
+  </ul>
+</div>
