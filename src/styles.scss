@@ -1,5 +1,18 @@
-body{
-  margin:0;
+body {
+  margin: 0;
   padding: 0;
   background-color: #212121;
+}
+
+%items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+%item{
+  border: 3px solid cadetblue;
+  width: 320px;
+  text-align: center;
+  margin: 5px;
 }

@@ -1,4 +1,5 @@
+@import "./src/styles";
+
 .characters {
-  display: flex;
-  flex-wrap: wrap;
+  @extend %items;
 }

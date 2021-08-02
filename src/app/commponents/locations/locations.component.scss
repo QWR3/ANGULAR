@@ -1,4 +1,6 @@
+@import "./src/styles";
+
 .locations{
-  display: flex;
-  flex-wrap: wrap;
+  @extend %items
+
 }

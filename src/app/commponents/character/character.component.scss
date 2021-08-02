@@ -1,6 +1,8 @@
+@import './src/styles';
+
 .character{
-  border: 3px solid cadetblue;
-  width: 300px;
-  text-align: center;
-  margin: 5px;
+  @extend %item;
+  >img{
+    width: 320px;
+  }
 }

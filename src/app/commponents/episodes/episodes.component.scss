@@ -1,4 +1,6 @@
+@import "./src/styles";
+
 .episodes{
-  display: flex;
-  flex-wrap: wrap;
+  @extend %items
+
 }
