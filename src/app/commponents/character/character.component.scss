@@ -1,8 +1,0 @@
-@import './src/styles';
-
-.character{
-  @extend %item;
-  >img{
-    width: 320px;
-  }
-}
