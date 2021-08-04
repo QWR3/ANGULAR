@@ -1,33 +1,15 @@
-<p>form works!</p>
-<!--<p>шаблонна форма</p>-->
+<!--шаблонна-->
 <!--<form (ngSubmit)="onSubmit()">-->
-<!--  <input type="text" name="username" [(ngModel)]="user.username">-->
-<!--  <input type="password" name="password" [(ngModel)]="user.password">-->
-<!--  <button>-->
-<!--    submit-->
-<!--  </button>-->
-<!--  <div>-->
-<!--    <label>-->
-<!--      Gender-->
-<!--      <input type="radio" class="" value="male" name="male" [(ngModel)]="user.gender">-->
-<!--      <input type="radio" class="" value="female" name="female" [(ngModel)]="user.gender">-->
-<!--    </label>-->
-<!--  </div>-->
-<!--  <div>-->
-<!--    <select name="level" [(ngModel)]="user.select" multiple>-->
-<!--      <option value="junior">junior</option>-->
-<!--      <option value="middle">middle</option>-->
-<!--      <option value="senior">senior</option>-->
-<!--    </select>-->
-<!--  </div>-->
+<!--  <select type="text" name="username" [(ngModel)]="form.username">-->
+<!--    <option *ngFor="let user of users" value="{{user.id}}">{{user.name}}</option>-->
+<!--  </select>-->
+<!--  <button [disabled]="!form.username">submit</button>-->
 <!--</form>-->
 
-<!--<p>рефктивна форма</p>-->
+<!--реактивна-->
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <div>
-    <input type="text" name="login" formControlName="username">
-    <h3 *ngIf="form.controls.username.errors?.warning">FUUU</h3>
-  </div>
-<!--  <button [disabled]="form.invalid">save</button>-->
-  <button>save</button>
+    <select type="text" name="username" formControlName="username">
+      <option *ngFor="let user of users" value="{{user.id}}">{{user.name}}</option>
+    </select>
+  <button [disabled]="form.invalid">submit</button>
 </form>

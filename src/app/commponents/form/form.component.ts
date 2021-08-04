@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
+import {IUser} from "../../models/user";
 import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
@@ -7,36 +9,37 @@ import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/form
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-  constructor() {
+
+  users: IUser[]
+
+  constructor(private activatedRoute: ActivatedRoute,private router:Router) {
+    this.activatedRoute.data.subscribe(({users}) => this.users = users)
   }
 
   ngOnInit(): void {
   }
 
-  //шаблонна форма
-  // user = {
-  //   username: 'jopipi',
-  //   password: 'admin',
-  //   gender: "male",
-  //   select:[]
+  //шаблонна
+  // form = {
+  //   username:0
   // }
-  // onSubmit() {
-  //   console.log(this.user)
+  // onSubmit(){
+  //   this.router.navigate(["/user",this.form?.username],{state: {user:this.form.username}})
   // }
 
-  customValidator(control: AbstractControl) {
-    if (control.value == "duck") {
-      return {warning: "FUUUU!!"}
+  // реактивна
+  validator(control:AbstractControl){
+    if(!control.value){
+      return {error:"form is empty"}
     }
     return null
   }
 
-  form: FormGroup = new FormGroup({
-    username: new FormControl("", this.customValidator),
+  form = new FormGroup({
+    username:new FormControl(0,[this.validator])
   })
 
-  onSubmit() {
+  onSubmit(){
     console.log(this.form)
   }
-
 }
