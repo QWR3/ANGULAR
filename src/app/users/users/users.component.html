@@ -1,0 +1,3 @@
+<button (click)="decClipboard()">------dec------</button>
+<app-user *ngFor="let u of users" [user]="u" (stateLifting)="chosen($event)"></app-user>
+<h3 *ngIf="user">{{user|json}}</h3>

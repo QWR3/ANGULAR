@@ -2,21 +2,16 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { UserComponent } from './commponents/user/user.component';
-import {RouterModule} from "@angular/router";
-import {routes} from "./routes/routes";
-import { FormComponent } from './commponents/form/form.component';
 import {HttpClientModule} from "@angular/common/http";
+import {AppRoutingModule} from "./app-routing.module";
+import {DataService} from "./services/data.service";
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,
-    FormComponent,
   ],
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule,RouterModule.forRoot(routes),HttpClientModule],
-  providers: [],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

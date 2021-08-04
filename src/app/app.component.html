@@ -1,5 +1,10 @@
 <div class="main">
+  <a routerLink="/users"><h2>users -.+</h2></a>
+  <a routerLink="/"><h2>home -.+</h2></a>
+  <h2>{{clipboard}}</h2>
+  <hr>
 </div>
 <div class="father">
+  <button (click)="incClipboard()">------inc------</button>
   <router-outlet></router-outlet>
 </div>
