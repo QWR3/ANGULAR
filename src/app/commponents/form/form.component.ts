@@ -41,5 +41,7 @@ export class FormComponent implements OnInit {
 
   onSubmit(){
     console.log(this.form)
+      this.router.navigate(["/user",this.form.controls.username.value],{state: {user:this.form.controls.username.value}})
+
   }
 }

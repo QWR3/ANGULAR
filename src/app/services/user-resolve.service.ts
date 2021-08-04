@@ -9,7 +9,7 @@ import {Location} from '@angular/common';
 })
 export class UserResolveService implements Resolve<IUser> {
 
-  constructor(private userService: UsersService, private activatedRoute: ActivatedRoute, private router: Router, private location: Location) {
+  constructor(private userService: UsersService, private router: Router, private location: Location) {
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {
@@ -17,8 +17,8 @@ export class UserResolveService implements Resolve<IUser> {
       const splitUrl = this.location.path().split('/')
       const id = +splitUrl[splitUrl.length - 1]
       return this.userService.getUser(id)
-    }else {
-      const id = + this.router.getCurrentNavigation()?.extras.state?.user
+    } else {
+      const id = +this.router.getCurrentNavigation()?.extras.state?.user
       return this.userService.getUser(id)
     }
   }
