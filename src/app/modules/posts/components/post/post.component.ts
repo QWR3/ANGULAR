@@ -14,6 +14,7 @@ export class PostComponent implements OnInit {
   @Output()
   chosen: EventEmitter<PostInterface> = new EventEmitter<PostInterface>()
 
+
   constructor() {
   }
 
@@ -21,7 +22,7 @@ export class PostComponent implements OnInit {
   }
 
   onClick() {
-  this.chosen.emit(this.post)
+    this.chosen.emit(this.post)
   }
 
 }
