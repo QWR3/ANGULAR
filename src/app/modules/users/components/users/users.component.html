@@ -1,0 +1,11 @@
+<p>users works!</p>
+<div *ngIf="chosen">
+  <h2>{{chosen.id}} - {{chosen.name}}</h2>
+  <h3>username - {{chosen.username}}</h3>
+  <h3>city - {{chosen.address.city}}</h3>
+  <h3>email - {{chosen.email}}</h3>
+  <h3>phone - {{chosen.phone}}</h3>
+  <h3>website - {{chosen.website}}</h3>
+  <h3>work in - {{chosen.company.name}}</h3>
+</div>
+<app-user *ngFor="let user of users" [user]="user" (chosen)="fillChosen($event)"></app-user>
