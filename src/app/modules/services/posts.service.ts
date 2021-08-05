@@ -13,4 +13,7 @@ export class PostsService {
   getPosts():Observable<PostInterface[]>{
     return this.httpClient.get<PostInterface[]>("https://jsonplaceholder.typicode.com/posts/")
   }
+  getPost(id:number):Observable<PostInterface>{
+    return this.httpClient.get<PostInterface>("https://jsonplaceholder.typicode.com/posts/"+id)
+  }
 }
